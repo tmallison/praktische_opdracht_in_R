@@ -1,9 +1,9 @@
 #--------Template - Onderdeel 2 - Machine Learning - ikml (40 punten) -------------
-# Naam student: 
-# studienummer: s0123456
+# Naam student: Thomas Allison
+# studienummer: s1095073
 
 
-# Gekozen dataset (website link). Beschrijving dataset
+# Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Poker+Hand. Beschrijving dataset
 # Inlezen dataset en nul-meeting (10 punten)
 # met nul meeting bedoelen we 
 # - scatterplots maken. histrogram plots
