@@ -4,6 +4,7 @@
 
 
 # Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Poker+Hand. Beschrijving dataset
+# Een pokerhand dataset.
 # Inlezen dataset en nul-meeting (10 punten)
 # met nul meeting bedoelen we 
 # - scatterplots maken. histrogram plots
@@ -11,6 +12,7 @@
 # - numerieke of categorische data
 # - missing values? 
 # - Bereik van de datapunten?
+data = read.table("./data/poker-hand-testing.data.txt", sep = ",", header = FALSE)
 
 
 
