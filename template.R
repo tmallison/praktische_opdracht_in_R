@@ -8,8 +8,8 @@
 # Inlezen dataset en nul-meeting (10 punten)
 # met nul meeting bedoelen we 
 # - scatterplots maken. histrogram plots
-# - dimensies van je data (aantal rijen, aantal kolommen)
-# - numerieke of categorische data
+# - dimensies van je data (aantal rijen, aantal kolommen) => 1.000.000 rijen en 11 kolommen
+# - numerieke of categorische data => categorische data omdat het geen wiskundige waarde heeft
 # - missing values? 
 # - Bereik van de datapunten?
 data = read.table("./data/poker-hand-testing.data.txt", sep = ",", header = FALSE)
