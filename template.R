@@ -10,8 +10,8 @@
 # - scatterplots maken. histrogram plots
 # - dimensies van je data (aantal rijen, aantal kolommen) => 1.000.000 rijen en 11 kolommen
 # - numerieke of categorische data => categorische data omdat het geen wiskundige waarde heeft
-# - missing values? 
-# - Bereik van de datapunten?
+# - missing values? => die bestaan niet in deze dataset
+# - Bereik van de datapunten? => Alle (S)uits hebben de opties [1|2|3|4] en de (C)ards [1|2|...|12|13]
 
 
 # 1) S1 ?Suit of card #1?
