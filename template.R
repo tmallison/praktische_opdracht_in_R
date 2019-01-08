@@ -3,8 +3,8 @@
 # studienummer: s1095073
 
 
-# Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Poker+Hand. Beschrijving dataset
-# Een pokerhand dataset.
+# Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Student+Performance. Beschrijving dataset
+# This data approach student achievement in secondary education of two Portuguese schools. The data attributes include student grades, demographic, social and school related features) and it was collected by using school reports and questionnaires. Two datasets are provided regarding the performance in two distinct subjects: Mathematics (mat) and Portuguese language (por). In [Cortez and Silva, 2008], the two datasets were modeled under binary/five-level classification and regression tasks. Important note: the target attribute G3 has a strong correlation with attributes G2 and G1. This occurs because G3 is the final year grade (issued at the 3rd period), while G1 and G2 correspond to the 1st and 2nd period grades. It is more difficult to predict G3 without G2 and G1, but such prediction is much more useful (see paper source for more details).
 # Inlezen dataset en nul-meeting (10 punten)
 # met nul meeting bedoelen we 
 # - scatterplots maken. histrogram plots
@@ -13,54 +13,11 @@
 # - missing values? => die bestaan niet in deze dataset
 # - Bereik van de datapunten? => Alle (S)uits hebben de opties [1|2|3|4] en de (C)ards [1|2|...|12|13]
 
+d1=read.table("student-mat.csv",sep=";",header=TRUE)
+d2=read.table("student-por.csv",sep=";",header=TRUE)
 
-# 1) S1 ?Suit of card #1?
-# Ordinal (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-# 
-# 2) C1 ?Rank of card #1?
-# Numerical (1-13) representing (Ace, 2, 3, ... , Queen, King)
-# 
-# 3) S2 ?Suit of card #2?
-# Ordinal (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-# 
-# 4) C2 ?Rank of card #2?
-# Numerical (1-13) representing (Ace, 2, 3, ... , Queen, King)
-# 
-# 5) S3 ?Suit of card #3?
-# Ordinal (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-# 
-# 6) C3 ?Rank of card #3?
-# Numerical (1-13) representing (Ace, 2, 3, ... , Queen, King)
-# 
-# 7) S4 ?Suit of card #4?
-# Ordinal (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-# 
-# 8) C4 ?Rank of card #4?
-# Numerical (1-13) representing (Ace, 2, 3, ... , Queen, King)
-# 
-# 9) S5 ?Suit of card #5?
-# Ordinal (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-# 
-# 10) C5 ?Rank of card 5?
-#   Numerical (1-13) representing (Ace, 2, 3, ... , Queen, King)
-# 
-# 11) CLASS ?Poker Hand?
-#   Ordinal (0-9)
-# 
-# 0: Nothing in hand; not a recognized poker hand 
-# 1: One pair; one pair of equal ranks within five cards
-# 2: Two pairs; two pairs of equal ranks within five cards
-# 3: Three of a kind; three equal ranks within five cards
-# 4: Straight; five cards, sequentially ranked with no gaps
-# 5: Flush; five cards with the same suit
-# 6: Full house; pair + different rank three of a kind
-# 7: Four of a kind; four equal ranks within five cards
-# 8: Straight flush; straight + flush
-# 9: Royal flush; {Ace, King, Queen, Jack, Ten} + flush
-
-d = read.table("./data/poker-hand-testing.data.txt", sep = ",", header = FALSE, col.names = c("S1", "C1", "S2", "C2", "S3", "C3", "S4", "C4", "S5", "C5", "CLASS"))
-dtrue = read.table("./data/poker-hand-training-true.data.txt", sep = ",", header = FALSE, col.names = c("S1", "C1", "S2", "C2", "S3", "C3", "S4", "C4", "S5", "C5", "CLASS"))
-
+d3=merge(d1,d2,by=c("school","sex","age","address","famsize","Pstatus","Medu","Fedu","Mjob","Fjob","reason","nursery","internet"))
+print(nrow(d3)) # 382 students
 
 # library(ggplot2)
 # ggplot(d, aes(x=CLASS)) + geom_histogram(binwidth=.1)
