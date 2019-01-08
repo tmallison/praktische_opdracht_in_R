@@ -13,6 +13,10 @@
 # - missing values? => die bestaan niet in deze dataset
 # - Bereik van de datapunten? => Alle (S)uits hebben de opties [1|2|3|4] en de (C)ards [1|2|...|12|13]
 
+
+# x = math, y = portugese
+library(ggplot2) 
+
 d1=read.table("./data/student-mat.csv",sep=";",header=TRUE)
 d2=read.table("./data/student-por.csv",sep=";",header=TRUE)
 
@@ -21,8 +25,16 @@ print(nrow(d3)) # 382 students
 
 # library(ggplot2)
 # ggplot(d, aes(x=CLASS)) + geom_histogram(binwidth=.1)
+help(plot)
 
-plot(dtrue,pch="*")
+require(gridExtra)
+
+plot1 <- qplot(d1$absences, d1$G3, xlab="Absence", ylab="Final grade")
+plot2 <- qplot(d1$absences, xlab = "Absence",  geom = "histogram")
+plot3 <- qplot(d1$age, d1$G3, xlab="Age", ylab="Final grade")
+plot4 <- qplot(d1$age, xlab = "Age",  geom = "histogram")
+
+grid.arrange(plot1, plot2, plot3, plot4, ncol=2)
 
 # gekozen classifier of regressie model trainen (10 punten)
 
