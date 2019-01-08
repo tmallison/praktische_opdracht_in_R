@@ -13,8 +13,8 @@
 # - missing values? => die bestaan niet in deze dataset
 # - Bereik van de datapunten? => Alle (S)uits hebben de opties [1|2|3|4] en de (C)ards [1|2|...|12|13]
 
-d1=read.table("student-mat.csv",sep=";",header=TRUE)
-d2=read.table("student-por.csv",sep=";",header=TRUE)
+d1=read.table("./data/student-mat.csv",sep=";",header=TRUE)
+d2=read.table("./data/student-por.csv",sep=";",header=TRUE)
 
 d3=merge(d1,d2,by=c("school","sex","age","address","famsize","Pstatus","Medu","Fedu","Mjob","Fjob","reason","nursery","internet"))
 print(nrow(d3)) # 382 students
