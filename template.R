@@ -58,10 +58,14 @@
 # 8: Straight flush; straight + flush
 # 9: Royal flush; {Ace, King, Queen, Jack, Ten} + flush
 
-data = read.table("./data/poker-hand-testing.data.txt", sep = ",", header = FALSE, col.names = c("S1", "C1", "S2", "C2", "S3", "C3", "S4", "C4", "S5", "C5", "CLASS"))
-plot(data$S1,data$S2)
+d = read.table("./data/poker-hand-testing.data.txt", sep = ",", header = FALSE, col.names = c("S1", "C1", "S2", "C2", "S3", "C3", "S4", "C4", "S5", "C5", "CLASS"))
+dtrue = read.table("./data/poker-hand-training-true.data.txt", sep = ",", header = FALSE, col.names = c("S1", "C1", "S2", "C2", "S3", "C3", "S4", "C4", "S5", "C5", "CLASS"))
 
 
+# library(ggplot2)
+# ggplot(d, aes(x=CLASS)) + geom_histogram(binwidth=.1)
+
+plot(dtrue,pch="*")
 
 # gekozen classifier of regressie model trainen (10 punten)
 
