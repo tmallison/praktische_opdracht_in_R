@@ -5,6 +5,7 @@
 
 # Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Student+Performance. Beschrijving dataset
 # This data approach student achievement in secondary education of two Portuguese schools. The data attributes include student grades, demographic, social and school related features) and it was collected by using school reports and questionnaires. Two datasets are provided regarding the performance in two distinct subjects: Mathematics (mat) and Portuguese language (por). In [Cortez and Silva, 2008], the two datasets were modeled under binary/five-level classification and regression tasks. Important note: the target attribute G3 has a strong correlation with attributes G2 and G1. This occurs because G3 is the final year grade (issued at the 3rd period), while G1 and G2 correspond to the 1st and 2nd period grades. It is more difficult to predict G3 without G2 and G1, but such prediction is much more useful (see paper source for more details).
+
 # Inlezen dataset en nul-meeting (10 punten)
 # met nul meeting bedoelen we 
 # - scatterplots maken. histrogram plots
@@ -29,7 +30,7 @@ help(plot)
 
 require(gridExtra)
 
-plot1 <- qplot(d1$absences, d1$G3, xlab="Absence", ylab="Final grade")
+plot1 <- qplot(d1$freetime, d1$G1, xlab="Absence", ylab="Final grade")
 plot2 <- qplot(d1$absences, xlab = "Absence",  geom = "histogram")
 plot3 <- qplot(d1$age, d1$G3, xlab="Age", ylab="Final grade")
 plot4 <- qplot(d1$age, xlab = "Age",  geom = "histogram")
@@ -37,9 +38,23 @@ plot4 <- qplot(d1$age, xlab = "Age",  geom = "histogram")
 grid.arrange(plot1, plot2, plot3, plot4, ncol=2)
 
 # gekozen classifier of regressie model trainen (10 punten)
+lm.fit=lm(G1~absences,data=d1) # eenvoudig lineaire regressie model, G3 = eindcijfer, absences = afwezigheid
+lm.fit # basisinformatie van model
+summary(lm.fit) # meer informatie
+confint(lm.fit) # Betrouwbaarheidsinterval voor de schattingen van de coëfficienten verkrijgen
+attach(d1)
+plot(absences, G1) # plot de chart
+abline(lm.fit) # teken de lijn van ons model
+predict(lm.fit, data.frame(absences=c(40,60,80)), interval="confidence") # voorspel waardes
+predict(lm.fit, data.frame(absences=c(40,60,80)), interval="prediction") #voorspel waardes
 
+par(mfrow=c(2,2)) # maak twee rijen + twee kolommen
+plot(lm.fit) # plot model
 
-
+plot(predict(lm.fit), residuals(lm.fit))
+plot(predict(lm.fit), rstudent(lm.fit))
+plot(hatvalues(lm.fit))
+which.max(hatvalues(lm.fit))
 
 # cross validatie of R squared (voor regressie) (10 punten)
 
