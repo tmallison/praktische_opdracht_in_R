@@ -16,10 +16,45 @@
 # Inlezen dataset en nul-meeting (10 punten)
 # met nul meeting bedoelen we 
 # - scatterplots maken. histrogram plots
-# - dimensies van je data (aantal rijen, aantal kolommen) => 1.000.000 rijen en 11 kolommen
-# - numerieke of categorische data => categorische data omdat het geen wiskundige waarde heeft
-# - missing values? => die bestaan niet in deze dataset
-# - Bereik van de datapunten? => Alle (S)uits hebben de opties [1|2|3|4] en de (C)ards [1|2|...|12|13]
+# - dimensies van je data (aantal rijen, aantal kolommen) => 395 rijen, 33 kolommen
+# - numerieke of categorische data => Numeriek, omdat de data meetbaar is. Zoals de absentie van een student
+#                                     of het cijfer een een student.
+# - missing values? => Er zijn geen missing values, er zijn echter wel bij meerdere studenten het cijfer 0 
+#                      te vinden omdat deze studenten de toets niet hebben gedaan.
+# - Bereik van de datapunten? => school - 'GP' of 'MS' 
+#                                sex - 'F' 'M' 
+#                                age - 15 tot 22 
+#                                address - 'U' of 'R' 
+#                                famsize - 'LE3' of 'GT3' 
+#                                Pstatus - 'T' of 'A' 
+#                                Medu - 0 of 1
+#                                Fedu - 0 of 1 
+#                                Mjob - 'teacher', 'health', 'services', 'at_home' of 'other' 
+#                                Fjob - 'teacher', 'health', 'services', 'at_home' of 'other' 
+#                                reason - 'home', 'reputation', 'course' of 'other'
+#                                guardian - 'mother', 'father' of 'other' 
+#                                traveltime - 1 t/m 4 
+#                                studytime - 1 t/m 4 
+#                                failures - 1 t/m 4 
+#                                schoolsup - 'yes' of 'no' 
+#                                famsup - 'yes' of 'no'
+#                                paid - 'yes' of 'no'
+#                                activities - 'yes' of 'no'
+#                                nursery - 'yes' of 'no'
+#                                higher - 'yes' of 'no'
+#                                internet - 'yes' of 'no'
+#                                romantic - 'yes' of 'no'
+#                                famrel - 1 t/m 5
+#                                freetime - 1 t/m 5
+#                                goout - 1 t/m 5
+#                                Dalc - 1 t/m 5
+#                                Walc - 1 t/m 5
+#                                health -1 t/m 5
+#                                absences - 0 t/m 92
+#                                G1 - 0 t/m 20
+#                                G2 - 0 t/m 20
+#                                G3 - 0 t/m 20
+
 
 library(ggplot2) 
 library(boot)
