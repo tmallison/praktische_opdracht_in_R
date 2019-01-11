@@ -1,8 +1,9 @@
 #--------Template - Onderdeel 2 - Machine Learning - ikml (40 punten) -------------
-# Naam student: Thomas Allison
-# studienummer: s1095073
-
-# Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Student+Performance. Beschrijving dataset:
+# Naam student: Reinier Kors
+# studienummer: s1087685
+# Gekozen dataset https://archive.ics.uci.edu/ml/datasets/Student+Performance. 
+#
+# Beschrijving dataset:
 # This data approach student achievement in secondary education of two Portuguese schools. 
 # The data attributes include student grades, demographic, social and school related features) and 
 # it was collected by using school reports and questionnaires. Two datasets are provided regarding 
@@ -100,6 +101,7 @@ for (i in 1:5) {
 cv.error # 11.07009 11.10098 11.19502 12.79235 17.24899, een stijging tussen de lineaire en kwadratische fits
 
 # K-Fold Cross Validatie
+
 set.seed(17)
 cv.error.10=rep(0,10)
 for(i in 1:10) {
